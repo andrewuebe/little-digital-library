@@ -162,6 +162,7 @@ const LeftSide = props => {
           <ItemInfoField className={props.itemLinkLocked && "link-locked"}>
             <span>Link</span>
             <LinkInputBox
+              readOnly={true}
               className={props.itemLinkLocked && "link-locked"}
               value={props.itemLinkLocked ? (truncate(props.selectedItem[0].link)) : props.selectedItem[0].link}
             ></LinkInputBox>

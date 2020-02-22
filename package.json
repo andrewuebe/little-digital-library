@@ -23,6 +23,7 @@
     "react": "^16.12.0",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.12.0",
+    "react-id-generator": "^3.0.0",
     "styled-components": "^5.0.1"
   },
   "//": "This is our babel config, I prefer this over a .babelrc file",

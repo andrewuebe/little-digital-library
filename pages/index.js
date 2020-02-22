@@ -28,7 +28,7 @@ export default class Home extends React.Component {
           itemSubmit={this.props.itemSubmit}
           itemIsShared={this.props.itemIsShared}
           selectedItem={this.props.itemSelected}
-          returnToList={this.props.returnToList}
+          returnToLibrary={this.props.returnToLibrary}
         />
       </Main>
     );

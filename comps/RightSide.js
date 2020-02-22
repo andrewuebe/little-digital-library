@@ -71,21 +71,30 @@ const ItemSubmitButton = styled.button`
 `;
 
 const RightSide = props => {
+  
+  function handleItemSubmit(e) {
+    e.preventDefault();
+    props.itemSubmit();
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(props.itemIsShared);
-    props.itemSubmit();
-
+    props.returnToLibrary();
   }
 
   if (props.itemIsSelected) {
-    console.log(props.itemIsShared)
     if (props.itemIsShared) {
-      console.log("at least we got here hehe")
       return (
         <RightWrapper>
           <h1>Thanks for sharing!</h1>
-      <p>Now you can see what <a href={props.selectedItem[0].link}>{props.selectedItem[0].title}</a> is all about!</p>
+          <p>
+            Now you can see what{" "}
+            <a href={props.selectedItem[0].link}>
+              {props.selectedItem[0].title}
+            </a>{" "}
+            is all about!
+          </p>
+          <ItemSubmitButton onClick={handleSubmit}>Return to library</ItemSubmitButton>
         </RightWrapper>
       );
     } else {
@@ -94,7 +103,7 @@ const RightSide = props => {
           <ItemSubmitForm>
             <FormTitle>What you're sharing</FormTitle>
             <TextInput changeItemInput={props.changeItemInput}></TextInput>
-            <ItemSubmitButton onClick={handleSubmit}>
+            <ItemSubmitButton onClick={handleItemSubmit}>
               Share item
             </ItemSubmitButton>
           </ItemSubmitForm>

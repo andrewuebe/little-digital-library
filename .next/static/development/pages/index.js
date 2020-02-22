@@ -247,6 +247,7 @@ var LeftSide = function LeftSide(props) {
       },
       __self: this
     }, "Link"), __jsx(LinkInputBox, {
+      readOnly: true,
       className: props.itemLinkLocked && "link-locked",
       value: props.itemLinkLocked ? truncate(props.selectedItem[0].link) : props.selectedItem[0].link,
       __source: {
@@ -259,89 +260,89 @@ var LeftSide = function LeftSide(props) {
       className: props.itemLinkLocked && "link-locked",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 169
       },
       __self: this
     }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faClipboard"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 169
       },
       __self: this
     })), __jsx(LinkLock, {
       className: props.itemLinkLocked ? "item-link link-locked" : "item-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 170
       },
       __self: this
     }, props.itemLinkLocked ? __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faLock"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
+        lineNumber: 172
       },
       __self: this
     }) : __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faLockOpen"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173
+        lineNumber: 174
       },
       __self: this
     }))), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 178
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 179
       },
       __self: this
     }, "Item type"), props.selectedItem[0].type.charAt(0).toUpperCase() + props.selectedItem[0].type.slice(1)), props.selectedItem[0].author.length > 0 && __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 183
+        lineNumber: 184
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
+        lineNumber: 185
       },
       __self: this
     }, "By"), props.selectedItem[0].author), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 188
+        lineNumber: 189
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
+        lineNumber: 190
       },
       __self: this
     }, "Shared by"), props.selectedItem[0].userId), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 193
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 193
+        lineNumber: 194
       },
       __self: this
     }, "A note from ", props.selectedItem[0].userId), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
+        lineNumber: 195
       },
       __self: this
     }, props.selectedItem[0].note))));
@@ -349,38 +350,38 @@ var LeftSide = function LeftSide(props) {
     return __jsx(LeftWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 201
+        lineNumber: 202
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202
+        lineNumber: 203
       },
       __self: this
     }, "Take an item.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 204
+        lineNumber: 205
       },
       __self: this
     }), " Share an item."), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 206
+        lineNumber: 207
       },
       __self: this
     }, "Inspired by the", " ", __jsx("a", {
       href: "https://littlefreelibrary.org/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 208
+        lineNumber: 209
       },
       __self: this
     }, "Little Free Library"), " ", "book-sharing movement, the Little Digital Library contains a small selection of links shared by others in your community. The one catch? You need to leave a link in exchange for taking one."), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 214
       },
       __self: this
     }, "So take a look around, and hopefully discover something new and exciting that a neighbor left for you."), __jsx(SearchBar, {
@@ -391,14 +392,14 @@ var LeftSide = function LeftSide(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 217
+        lineNumber: 218
       },
       __self: this
     }), __jsx(Table, {
       src: "../static/table.svg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 222
+        lineNumber: 223
       },
       __self: this
     }));
@@ -447,74 +448,82 @@ var ItemSubmitButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"]
 })(["padding:1rem 2rem;position:relative;display:block;background:#b9607a;border:1px solid #53443b;color:white;text-transform:uppercase;font-family:\"Montserrat\",Helvetica,sans-serif;font-size:16px;:focus{outline:none;}::before{content:\"\";width:100%;height:100%;background-color:#53443b;border:1px solid #53443b;top:2px;left:2px;position:absolute;z-index:-1;}:hover{cursor:pointer;}:hover::before{transition:0.1s ease;top:4px;left:4px;}"]);
 
 var RightSide = function RightSide(props) {
-  function handleSubmit(e) {
+  function handleItemSubmit(e) {
     e.preventDefault();
-    console.log(props.itemIsShared);
     props.itemSubmit();
   }
 
-  if (props.itemIsSelected) {
-    console.log(props.itemIsShared);
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.returnToLibrary();
+  }
 
+  if (props.itemIsSelected) {
     if (props.itemIsShared) {
-      console.log("at least we got here hehe");
       return __jsx(RightWrapper, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 88
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 89
         },
         __self: this
       }, "Thanks for sharing!"), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 90
         },
         __self: this
-      }, "Now you can see what ", __jsx("a", {
+      }, "Now you can see what", " ", __jsx("a", {
         href: props.selectedItem[0].link,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 92
         },
         __self: this
-      }, props.selectedItem[0].title), " is all about!"));
+      }, props.selectedItem[0].title), " ", "is all about!"), __jsx(ItemSubmitButton, {
+        onClick: handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, "Return to library"));
     } else {
       return __jsx(RightWrapper, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 102
         },
         __self: this
       }, __jsx(ItemSubmitForm, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 103
         },
         __self: this
       }, __jsx(FormTitle, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 104
         },
         __self: this
       }, "What you're sharing"), __jsx(_comps_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
         changeItemInput: props.changeItemInput,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 105
         },
         __self: this
       }), __jsx(ItemSubmitButton, {
-        onClick: handleSubmit,
+        onClick: handleItemSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 106
         },
         __self: this
       }, "Share item")));
@@ -523,7 +532,7 @@ var RightSide = function RightSide(props) {
     return __jsx(RightWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 115
       },
       __self: this
     }, __jsx(_comps_ItemList__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -531,7 +540,7 @@ var RightSide = function RightSide(props) {
       selectItem: props.selectItem,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 116
       },
       __self: this
     }));
@@ -16836,7 +16845,7 @@ function (_React$Component) {
         itemSubmit: this.props.itemSubmit,
         itemIsShared: this.props.itemIsShared,
         selectedItem: this.props.itemSelected,
-        returnToList: this.props.returnToList,
+        returnToLibrary: this.props.returnToLibrary,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23

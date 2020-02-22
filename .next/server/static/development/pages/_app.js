@@ -2110,8 +2110,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _comps_Page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../comps/Page */ "./comps/Page.js");
-/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
-/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_id_generator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-id-generator */ "react-id-generator");
+/* harmony import */ var react_id_generator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_id_generator__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/andrewuebe/little-digital-library/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2121,6 +2123,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2149,6 +2152,9 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
         return item.id === inputID;
       });
       this.setState({
+        itemSelectedId: inputID
+      });
+      this.setState({
         itemSelected: selectedItem
       });
       this.setState({
@@ -2156,12 +2162,71 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       });
     });
 
-    _defineProperty(this, "itemSubmit", () => {
-      const myNewState = _objectSpread({}, this.state);
+    _defineProperty(this, "validURL", str => {
+      var pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$", "i"); // fragment locator
 
-      myNewState.itemIsShared = true;
-      myNewState.itemLinkLocked = false;
-      this.setState(myNewState);
+      return !!pattern.test(str);
+    });
+
+    _defineProperty(this, "isInputValid", () => {
+      var linkInput = this.state.inputLink;
+
+      if (this.validURL(linkInput)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    _defineProperty(this, "itemSubmit", () => {
+      if (this.isInputValid()) {
+        const myNewState = _objectSpread({}, this.state);
+
+        myNewState.itemIsShared = true;
+        myNewState.itemLinkLocked = false;
+        const newArray = this.state.items.slice();
+        const newItem = {
+          userId: this.state.inputUserId,
+          id: react_id_generator__WEBPACK_IMPORTED_MODULE_4___default()(),
+          title: this.state.inputTitle,
+          author: this.state.inputAuthor,
+          link: this.state.inputLink,
+          type: this.state.inputType,
+          note: this.state.inputNote
+        };
+        newArray.push(newItem);
+        myNewState.items = newArray;
+        this.setState(myNewState);
+      } else {
+        console.log("invalid input, sorry!!");
+      }
+    });
+
+    _defineProperty(this, "handleDelete", itemId => {
+      const items = this.state.items.filter(item => item.id !== itemId);
+      this.setState({
+        items: items
+      });
+    });
+
+    _defineProperty(this, "returnToLibrary", () => {
+      const selectedItemId = this.state.itemSelectedId;
+      this.handleDelete(selectedItemId);
+      const obj = {};
+      this.setState({
+        itemSelected: obj
+      });
+      this.setState({
+        itemIsShared: false
+      });
+      this.setState({
+        itemIsSelected: false
+      });
     });
 
     this.state = {
@@ -2169,6 +2234,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       searchField: "",
       itemIsSelected: false,
       itemSelected: {},
+      itemSelectedId: 9999,
       itemLinkLocked: true,
       itemIsShared: false,
       inputAuthor: "",
@@ -2201,19 +2267,19 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     return __jsx(next_app__WEBPACK_IMPORTED_MODULE_1__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 123
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 124
       },
       __self: this
     }, __jsx("title", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 125
       },
       __self: this
     }, "Little Digital Library"), __jsx("meta", {
@@ -2221,13 +2287,13 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       content: "initial-scale=1.0, width=device-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 126
       },
       __self: this
     })), __jsx(_comps_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 131
       },
       __self: this
     }, __jsx(Component, {
@@ -2239,10 +2305,11 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       itemSelected: this.state.itemSelected,
       changeItemInput: this.changeItemInput,
       itemSubmit: this.itemSubmit,
-      itemIsShared: this.itemIsShared,
+      itemIsShared: this.state.itemIsShared,
+      returnToLibrary: this.returnToLibrary,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 132
       },
       __self: this
     })));
@@ -2373,6 +2440,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-id-generator":
+/*!*************************************!*\
+  !*** external "react-id-generator" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-id-generator");
 
 /***/ }),
 
