@@ -1,7 +1,7 @@
 import App, { Container } from "next/app";
 import Head from "next/head";
 import Page from "../comps/Page";
-import "../static/fonts.css";
+import "../static/style.css";
 
 class MyApp extends App {
   constructor() {
@@ -25,6 +25,7 @@ class MyApp extends App {
   }
 
   componentDidMount() {
+    // fetch items from endpoint
     fetch("https://my-json-server.typicode.com/andrewuebe/test-db/posts")
       .then(response => response.json())
       .then(posts => this.setState({ items: posts }));
@@ -56,11 +57,15 @@ class MyApp extends App {
   }
 
   render() {
+
+    // filter item list by searchField
     const { Component } = this.props;
     const { items, searchField } = this.state;
     const filteredItems = items.filter(item =>
       item.title.toLowerCase().includes(searchField.toLowerCase())
     );
+
+
     return (
       <Container>
         <Head>

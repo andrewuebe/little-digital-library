@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Hind:400,700|Montserrat:300,400,700&display=swap");
+
+html {
+  margin: 0;
+  margin-left: calc(100vw - 100%);
+  padding: 0;
+  font-family: "Hind", Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #f9ebef;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #53443b;
+}
+
+a {
+  color: #b9607a;
+}
+
+h1 {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 300;
+  margin-top: 0px;
+}
+
+p {
+  font-family: "Hind", Helvetica, sans-serif;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 2rem;
+}
+
+.input-title {
+  margin-bottom: 2rem;
+  font-weight: 600 !important;
+  font-size: 56px !important;
+  height: 56px;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input.link-locked {
+  color: #afa49c;
+  pointer-events: none;
+  border: 1px solid #53443b;
+}
+
+.item-link {
+  font-size: 16px;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.item-link.link-locked {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 55%
+  );
+  width: calc(100% - 52px);
+  font-size: 16px;
+  border: 1px solid #53443b;
+  color: #53443b;
+}
+
+.item-link svg {
+  max-width: 16px;
+}
+
+button.link-locked {
+  background-color: #afa49c;
+  border: 1px solid #53443b;
+  border-left: none;
+}
+
+button svg {
+  max-width: 8px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+
+select:invalid {
+  color: gray;
+}

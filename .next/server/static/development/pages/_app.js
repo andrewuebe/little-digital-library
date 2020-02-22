@@ -2110,8 +2110,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _comps_Page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../comps/Page */ "./comps/Page.js");
-/* harmony import */ var _static_fonts_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/fonts.css */ "./static/fonts.css");
-/* harmony import */ var _static_fonts_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_fonts_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/andrewuebe/little-digital-library/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2182,12 +2182,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
   }
 
   componentDidMount() {
+    // fetch items from endpoint
     fetch("https://my-json-server.typicode.com/andrewuebe/test-db/posts").then(response => response.json()).then(posts => this.setState({
       items: posts
     }));
   }
 
   render() {
+    // filter item list by searchField
     const {
       Component
     } = this.props;
@@ -2199,19 +2201,19 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     return __jsx(next_app__WEBPACK_IMPORTED_MODULE_1__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 70
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 71
       },
       __self: this
     }, __jsx("title", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 72
       },
       __self: this
     }, "Little Digital Library"), __jsx("meta", {
@@ -2219,13 +2221,13 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       content: "initial-scale=1.0, width=device-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 73
       },
       __self: this
     })), __jsx(_comps_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 78
       },
       __self: this
     }, __jsx(Component, {
@@ -2240,7 +2242,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       itemIsShared: this.itemIsShared,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 79
       },
       __self: this
     })));
@@ -2252,9 +2254,9 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 
 /***/ }),
 
-/***/ "./static/fonts.css":
+/***/ "./static/style.css":
 /*!**************************!*\
-  !*** ./static/fonts.css ***!
+  !*** ./static/style.css ***!
   \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
