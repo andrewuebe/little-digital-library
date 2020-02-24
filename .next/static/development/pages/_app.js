@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav */ "./comps/nav.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./comps/Nav.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -30,7 +30,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withCo
   componentId: "sc-11x1lzp-1"
 })(["font-family:\"Montserrat\",Arial,Helvetica,sans-serif;font-size:1.5em;a{text-decoration:none;color:#53443b;}"]);
 
-var Header = function Header() {
+var Header = function Header(props) {
   return __jsx(TheHeader, {
     __source: {
       fileName: _jsxFileName,
@@ -38,6 +38,7 @@ var Header = function Header() {
     },
     __self: this
   }, __jsx(Title, {
+    onClick: props.closeToLibrary,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
@@ -56,7 +57,8 @@ var Header = function Header() {
       lineNumber: 30
     },
     __self: this
-  }, "Little Digital Library"))), __jsx(_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Little Digital Library"))), __jsx(_Nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    closeToLibrary: props.closeToLibrary,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
@@ -66,6 +68,73 @@ var Header = function Header() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./comps/Nav.js":
+/*!**********************!*\
+  !*** ./comps/Nav.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/Users/andrewuebe/little-digital-library/comps/Nav.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var TextLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
+  displayName: "Nav__TextLink",
+  componentId: "sc-138bo82-0"
+})(["margin-left:20px;:hover{cursor:pointer;}"]);
+
+var Nav = function Nav(props) {
+  return __jsx("div", {
+    className: "nav",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, __jsx(TextLink, {
+    onClick: props.closeToLibrary,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/about",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, __jsx(TextLink, {
+    onClick: props.closeToLibrary,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "About")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Nav);
 
 /***/ }),
 
@@ -123,6 +192,7 @@ function (_Component) {
         },
         __self: this
       }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        closeToLibrary: this.props.closeToLibrary,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15
@@ -142,71 +212,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
-
-/***/ }),
-
-/***/ "./comps/nav.js":
-/*!**********************!*\
-  !*** ./comps/nav.js ***!
-  \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "/Users/andrewuebe/little-digital-library/comps/nav.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-var TextLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
-  displayName: "nav__TextLink",
-  componentId: "sc-1ujlgyc-0"
-})(["margin-left:20px;:hover{cursor:pointer;}"]);
-
-var Nav = function Nav() {
-  return __jsx("div", {
-    className: "nav",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, __jsx(TextLink, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, __jsx(TextLink, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, "About")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Nav);
 
 /***/ }),
 
@@ -6014,7 +6019,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/di
 
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Hind:400,700|Montserrat:300,400,700&display=swap);"]);
 // Module
-exports.push([module.i, "html {\n  margin: 0;\n  margin-left: calc(100vw - 100%);\n  padding: 0;\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  background-color: #f9ebef;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  color: #53443b;\n}\n\na {\n  color: #b9607a;\n}\n\nh1 {\n  font-family: \"Montserrat\", Helvetica, sans-serif;\n  font-size: 40px;\n  line-height: 48px;\n  font-weight: 300;\n  margin-top: 0px;\n}\n\np {\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  margin-top: 0px;\n  margin-bottom: 2rem;\n}\n\n.input-title {\n  margin-bottom: 2rem;\n  font-weight: 600 !important;\n  font-size: 56px !important;\n  height: 56px;\n}\n\ninput {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n}\n\ninput.link-locked {\n  color: #afa49c;\n  pointer-events: none;\n  border: 1px solid #53443b;\n}\n\n.item-link {\n  font-size: 16px;\n  box-sizing: border-box;\n  width: auto;\n}\n\n.item-link.link-locked {\n  background: rgb(255, 255, 255);\n  background: linear-gradient(\n    90deg,\n    rgba(255, 255, 255, 0) 0%,\n    rgba(255, 255, 255, 1) 55%\n  );\n  width: calc(100% - 52px);\n  font-size: 16px;\n  border: 1px solid #53443b;\n  color: #53443b;\n}\n\n.item-link svg {\n  max-width: 16px;\n}\n\nbutton.link-locked {\n  background-color: #afa49c;\n  border: 1px solid #53443b;\n  border-left: none;\n}\n\nbutton svg {\n  max-width: 8px;\n}\n\nselect {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  border-radius: 0;\n}\n\nselect:invalid {\n  color: gray;\n}\n", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,+BAA+B;EAC/B,UAAU;EACV,0CAA0C;EAC1C,eAAe;EACf,yBAAyB;AAC3B;;AAEA;EACE,SAAS;EACT,UAAU;EACV,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,gDAAgD;EAChD,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,0CAA0C;EAC1C,eAAe;EACf,eAAe;EACf,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;EACnB,2BAA2B;EAC3B,0BAA0B;EAC1B,YAAY;AACd;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;AACvB;;AAEA;EACE,cAAc;EACd,oBAAoB;EACpB,yBAAyB;AAC3B;;AAEA;EACE,eAAe;EACf,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,8BAA8B;EAC9B;;;;GAIC;EACD,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,cAAc;AAChB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;AAClB;;AAEA;EACE,WAAW;AACb","file":"style.css","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Hind:400,700|Montserrat:300,400,700&display=swap\");\n\nhtml {\n  margin: 0;\n  margin-left: calc(100vw - 100%);\n  padding: 0;\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  background-color: #f9ebef;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  color: #53443b;\n}\n\na {\n  color: #b9607a;\n}\n\nh1 {\n  font-family: \"Montserrat\", Helvetica, sans-serif;\n  font-size: 40px;\n  line-height: 48px;\n  font-weight: 300;\n  margin-top: 0px;\n}\n\np {\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  margin-top: 0px;\n  margin-bottom: 2rem;\n}\n\n.input-title {\n  margin-bottom: 2rem;\n  font-weight: 600 !important;\n  font-size: 56px !important;\n  height: 56px;\n}\n\ninput {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n}\n\ninput.link-locked {\n  color: #afa49c;\n  pointer-events: none;\n  border: 1px solid #53443b;\n}\n\n.item-link {\n  font-size: 16px;\n  box-sizing: border-box;\n  width: auto;\n}\n\n.item-link.link-locked {\n  background: rgb(255, 255, 255);\n  background: linear-gradient(\n    90deg,\n    rgba(255, 255, 255, 0) 0%,\n    rgba(255, 255, 255, 1) 55%\n  );\n  width: calc(100% - 52px);\n  font-size: 16px;\n  border: 1px solid #53443b;\n  color: #53443b;\n}\n\n.item-link svg {\n  max-width: 16px;\n}\n\nbutton.link-locked {\n  background-color: #afa49c;\n  border: 1px solid #53443b;\n  border-left: none;\n}\n\nbutton svg {\n  max-width: 8px;\n}\n\nselect {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  border-radius: 0;\n}\n\nselect:invalid {\n  color: gray;\n}\n"]}]);
+exports.push([module.i, "html {\n  margin: 0;\n  margin-left: calc(100vw - 100%);\n  padding: 0;\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  background-color: #f9ebef;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  color: #53443b;\n}\n\na {\n  color: #b9607a;\n}\n\nh1 {\n  font-family: \"Montserrat\", Helvetica, sans-serif;\n  font-size: 40px;\n  line-height: 48px;\n  font-weight: 300;\n  margin-top: 0px;\n}\n\np {\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  margin-top: 0px;\n  margin-bottom: 2rem;\n}\n\n.input-title {\n  margin-bottom: 2rem;\n  font-weight: 600 !important;\n  font-size: 56px !important;\n  height: 56px;\n}\n\ninput {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n}\n\ninput.link-locked {\n  color: #afa49c;\n  pointer-events: none;\n  border: 1px solid #53443b;\n}\n\n.item-link {\n  font-size: 16px;\n  box-sizing: border-box;\n  width: auto;\n}\n\n.item-link.link-locked {\n  background: rgb(255, 255, 255);\n  background: linear-gradient(\n    90deg,\n    rgba(255, 255, 255, 0) 0%,\n    rgba(255, 255, 255, 1) 55%\n  );\n  width: calc(100% - 52px);\n  font-size: 16px;\n  border: 1px solid #53443b;\n  color: #53443b;\n}\n\n.item-link svg {\n  max-width: 16px;\n}\n\nbutton.link-locked {\n  background-color: #afa49c;\n  border: 1px solid #53443b;\n  border-left: none;\n}\n\nbutton svg {\n  max-width: 8px;\n}\n\nselect {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  border-radius: 0;\n}\n\nselect:invalid {\n  color: gray;\n}\n\n.exit-button {\n  position: absolute;\n  right: 25px;\n  font-size: 20px;\n  top: 15px;\n  color: #53443b;\n}\n\n.exit-button svg:hover {\n  cursor: pointer;\n  color: #afa49c;\n  transition: all 0.2s ease;\n}\n", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,+BAA+B;EAC/B,UAAU;EACV,0CAA0C;EAC1C,eAAe;EACf,yBAAyB;AAC3B;;AAEA;EACE,SAAS;EACT,UAAU;EACV,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,gDAAgD;EAChD,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,0CAA0C;EAC1C,eAAe;EACf,eAAe;EACf,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;EACnB,2BAA2B;EAC3B,0BAA0B;EAC1B,YAAY;AACd;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;AACvB;;AAEA;EACE,cAAc;EACd,oBAAoB;EACpB,yBAAyB;AAC3B;;AAEA;EACE,eAAe;EACf,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,8BAA8B;EAC9B;;;;GAIC;EACD,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,cAAc;AAChB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,yBAAyB;EACzB,yBAAyB;EACzB,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;AAClB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,WAAW;EACX,eAAe;EACf,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,cAAc;EACd,yBAAyB;AAC3B","file":"style.css","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Hind:400,700|Montserrat:300,400,700&display=swap\");\n\nhtml {\n  margin: 0;\n  margin-left: calc(100vw - 100%);\n  padding: 0;\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  background-color: #f9ebef;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  color: #53443b;\n}\n\na {\n  color: #b9607a;\n}\n\nh1 {\n  font-family: \"Montserrat\", Helvetica, sans-serif;\n  font-size: 40px;\n  line-height: 48px;\n  font-weight: 300;\n  margin-top: 0px;\n}\n\np {\n  font-family: \"Hind\", Helvetica, sans-serif;\n  font-size: 16px;\n  margin-top: 0px;\n  margin-bottom: 2rem;\n}\n\n.input-title {\n  margin-bottom: 2rem;\n  font-weight: 600 !important;\n  font-size: 56px !important;\n  height: 56px;\n}\n\ninput {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n}\n\ninput.link-locked {\n  color: #afa49c;\n  pointer-events: none;\n  border: 1px solid #53443b;\n}\n\n.item-link {\n  font-size: 16px;\n  box-sizing: border-box;\n  width: auto;\n}\n\n.item-link.link-locked {\n  background: rgb(255, 255, 255);\n  background: linear-gradient(\n    90deg,\n    rgba(255, 255, 255, 0) 0%,\n    rgba(255, 255, 255, 1) 55%\n  );\n  width: calc(100% - 52px);\n  font-size: 16px;\n  border: 1px solid #53443b;\n  color: #53443b;\n}\n\n.item-link svg {\n  max-width: 16px;\n}\n\nbutton.link-locked {\n  background-color: #afa49c;\n  border: 1px solid #53443b;\n  border-left: none;\n}\n\nbutton svg {\n  max-width: 8px;\n}\n\nselect {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  border-radius: 0;\n}\n\nselect:invalid {\n  color: gray;\n}\n\n.exit-button {\n  position: absolute;\n  right: 25px;\n  font-size: 20px;\n  top: 15px;\n  color: #53443b;\n}\n\n.exit-button svg:hover {\n  cursor: pointer;\n  color: #afa49c;\n  transition: all 0.2s ease;\n}\n"]}]);
 
 
 /***/ }),
@@ -14695,6 +14700,8 @@ function (_App) {
       _this.setState({
         itemIsSelected: true
       });
+
+      window.scrollTo(0, 100);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "validURL", function (str) {
@@ -14773,6 +14780,30 @@ function (_App) {
       _this.setState({
         itemIsSelected: false
       });
+
+      _this.setState({
+        itemLinkLocked: true
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "closeToLibrary", function () {
+      var obj = {};
+
+      _this.setState({
+        itemSelected: obj
+      });
+
+      _this.setState({
+        itemIsShared: false
+      });
+
+      _this.setState({
+        itemIsSelected: false
+      });
+
+      _this.setState({
+        itemLinkLocked: true
+      });
     });
 
     _this.state = {
@@ -14822,19 +14853,19 @@ function (_App) {
       return __jsx(next_app__WEBPACK_IMPORTED_MODULE_14__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 133
         },
         __self: this
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_15___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 134
         },
         __self: this
       }, __jsx("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 135
         },
         __self: this
       }, "Little Digital Library"), __jsx("meta", {
@@ -14842,13 +14873,14 @@ function (_App) {
         content: "initial-scale=1.0, width=device-width",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 136
         },
         __self: this
       })), __jsx(_comps_Page__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        closeToLibrary: this.closeToLibrary,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 141
         },
         __self: this
       }, __jsx(Component, {
@@ -14862,9 +14894,10 @@ function (_App) {
         itemSubmit: this.itemSubmit,
         itemIsShared: this.state.itemIsShared,
         returnToLibrary: this.returnToLibrary,
+        closeToLibrary: this.closeToLibrary,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 144
         },
         __self: this
       })));

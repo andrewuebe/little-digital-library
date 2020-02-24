@@ -104,7 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav */ "./comps/nav.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./comps/Nav.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
@@ -124,13 +124,14 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withC
   componentId: "sc-11x1lzp-1"
 })(["font-family:\"Montserrat\",Arial,Helvetica,sans-serif;font-size:1.5em;a{text-decoration:none;color:#53443b;}"]);
 
-const Header = () => __jsx(TheHeader, {
+const Header = props => __jsx(TheHeader, {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 27
   },
   __self: undefined
 }, __jsx(Title, {
+  onClick: props.closeToLibrary,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 28
@@ -149,7 +150,8 @@ const Header = () => __jsx(TheHeader, {
     lineNumber: 30
   },
   __self: undefined
-}, "Little Digital Library"))), __jsx(_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+}, "Little Digital Library"))), __jsx(_Nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  closeToLibrary: props.closeToLibrary,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 33
@@ -158,6 +160,72 @@ const Header = () => __jsx(TheHeader, {
 }));
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./comps/Nav.js":
+/*!**********************!*\
+  !*** ./comps/Nav.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/andrewuebe/little-digital-library/comps/Nav.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const TextLink = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a.withConfig({
+  displayName: "Nav__TextLink",
+  componentId: "sc-138bo82-0"
+})(["margin-left:20px;:hover{cursor:pointer;}"]);
+
+const Nav = props => __jsx("div", {
+  className: "nav",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}, __jsx(TextLink, {
+  onClick: props.closeToLibrary,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 14
+  },
+  __self: undefined
+}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/about",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, __jsx(TextLink, {
+  onClick: props.closeToLibrary,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}, "About")));
+
+/* harmony default export */ __webpack_exports__["default"] = (Nav);
 
 /***/ }),
 
@@ -194,6 +262,7 @@ class Page extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      closeToLibrary: this.props.closeToLibrary,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -211,70 +280,6 @@ class Page extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
-
-/***/ }),
-
-/***/ "./comps/nav.js":
-/*!**********************!*\
-  !*** ./comps/nav.js ***!
-  \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/andrewuebe/little-digital-library/comps/nav.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const TextLink = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a.withConfig({
-  displayName: "nav__TextLink",
-  componentId: "sc-1ujlgyc-0"
-})(["margin-left:20px;:hover{cursor:pointer;}"]);
-
-const Nav = () => __jsx("div", {
-  className: "nav",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}, __jsx(TextLink, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 14
-  },
-  __self: undefined
-}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/about",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 16
-  },
-  __self: undefined
-}, __jsx(TextLink, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}, "About")));
-
-/* harmony default export */ __webpack_exports__["default"] = (Nav);
 
 /***/ }),
 
@@ -2160,6 +2165,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       this.setState({
         itemIsSelected: true
       });
+      window.scrollTo(0, 100);
     });
 
     _defineProperty(this, "validURL", str => {
@@ -2227,6 +2233,25 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       this.setState({
         itemIsSelected: false
       });
+      this.setState({
+        itemLinkLocked: true
+      });
+    });
+
+    _defineProperty(this, "closeToLibrary", () => {
+      const obj = {};
+      this.setState({
+        itemSelected: obj
+      });
+      this.setState({
+        itemIsShared: false
+      });
+      this.setState({
+        itemIsSelected: false
+      });
+      this.setState({
+        itemLinkLocked: true
+      });
     });
 
     this.state = {
@@ -2267,19 +2292,19 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     return __jsx(next_app__WEBPACK_IMPORTED_MODULE_1__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 133
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 134
       },
       __self: this
     }, __jsx("title", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 125
+        lineNumber: 135
       },
       __self: this
     }, "Little Digital Library"), __jsx("meta", {
@@ -2287,13 +2312,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       content: "initial-scale=1.0, width=device-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 126
+        lineNumber: 136
       },
       __self: this
     })), __jsx(_comps_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      closeToLibrary: this.closeToLibrary,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 141
       },
       __self: this
     }, __jsx(Component, {
@@ -2307,9 +2333,10 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       itemSubmit: this.itemSubmit,
       itemIsShared: this.state.itemIsShared,
       returnToLibrary: this.returnToLibrary,
+      closeToLibrary: this.closeToLibrary,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 144
       },
       __self: this
     })));

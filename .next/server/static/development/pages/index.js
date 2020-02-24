@@ -252,6 +252,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Table = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img.withConfig({
   displayName: "LeftSide__Table",
   componentId: "ww0up8-0"
@@ -308,38 +309,53 @@ const LeftSide = props => {
     return __jsx(LeftWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158
+        lineNumber: 159
       },
       __self: undefined
     }, __jsx(ReviewCard, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159
+        lineNumber: 160
       },
       __self: undefined
-    }, __jsx(FormTitle, {
+    }, __jsx("div", {
+      className: "exit-button",
+      onClick: props.closeToLibrary,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 161
+      },
+      __self: undefined
+    }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+      icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faTimes"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 161
+      },
+      __self: undefined
+    })), __jsx(FormTitle, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 162
       },
       __self: undefined
     }, "What you're taking"), __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161
+        lineNumber: 163
       },
       __self: undefined
     }, props.selectedItem[0].title), __jsx(ItemInfoField, {
       className: props.itemLinkLocked && "link-locked",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162
+        lineNumber: 164
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 165
       },
       __self: undefined
     }, "Link"), __jsx(LinkInputBox, {
@@ -348,7 +364,7 @@ const LeftSide = props => {
       value: props.itemLinkLocked ? truncate(props.selectedItem[0].link) : props.selectedItem[0].link,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 166
       },
       __self: undefined
     }), __jsx(LinkCopy, {
@@ -356,89 +372,89 @@ const LeftSide = props => {
       className: props.itemLinkLocked && "link-locked",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 171
       },
       __self: undefined
     }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faClipboard"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 171
       },
       __self: undefined
     })), __jsx(LinkLock, {
       className: props.itemLinkLocked ? "item-link link-locked" : "item-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 172
       },
       __self: undefined
     }, props.itemLinkLocked ? __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faLock"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172
+        lineNumber: 174
       },
       __self: undefined
     }) : __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faLockOpen"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 176
       },
       __self: undefined
     }))), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 180
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
+        lineNumber: 181
       },
       __self: undefined
     }, "Item type"), props.selectedItem[0].type.charAt(0).toUpperCase() + props.selectedItem[0].type.slice(1)), props.selectedItem[0].author.length > 0 && __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
+        lineNumber: 186
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 185
+        lineNumber: 187
       },
       __self: undefined
     }, "By"), props.selectedItem[0].author), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
+        lineNumber: 191
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190
+        lineNumber: 192
       },
       __self: undefined
     }, "Shared by"), props.selectedItem[0].userId), __jsx(ItemInfoField, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 193
+        lineNumber: 195
       },
       __self: undefined
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
+        lineNumber: 196
       },
       __self: undefined
     }, "A note from ", props.selectedItem[0].userId), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195
+        lineNumber: 197
       },
       __self: undefined
     }, props.selectedItem[0].note))));
@@ -446,38 +462,38 @@ const LeftSide = props => {
     return __jsx(LeftWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202
+        lineNumber: 204
       },
       __self: undefined
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 205
       },
       __self: undefined
     }, "Take an item.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205
+        lineNumber: 207
       },
       __self: undefined
     }), " Share an item."), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 207
+        lineNumber: 209
       },
       __self: undefined
     }, "Inspired by the", " ", __jsx("a", {
       href: "https://littlefreelibrary.org/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 209
+        lineNumber: 211
       },
       __self: undefined
     }, "Little Free Library"), " ", "book-sharing movement, the Little Digital Library contains a small selection of links shared by others in your community. The one catch? You need to leave a link in exchange for taking one."), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 214
+        lineNumber: 216
       },
       __self: undefined
     }, "So take a look around, and hopefully discover something new and exciting that a neighbor left for you."), __jsx(SearchBar, {
@@ -486,14 +502,14 @@ const LeftSide = props => {
       onChange: e => props.searchItems(e.target.value),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 218
+        lineNumber: 220
       },
       __self: undefined
     }), __jsx(Table, {
       src: "../static/table.svg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 225
       },
       __self: undefined
     }));
@@ -902,6 +918,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       itemIsSelected: this.props.itemIsSelected,
       itemLinkLocked: this.props.itemLinkLocked,
       selectedItem: this.props.itemSelected,
+      closeToLibrary: this.props.closeToLibrary,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
@@ -918,7 +935,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       returnToLibrary: this.props.returnToLibrary,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: this
     }));

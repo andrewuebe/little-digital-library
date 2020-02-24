@@ -50,6 +50,7 @@ class MyApp extends App {
     this.setState({ itemSelectedId: inputID });
     this.setState({ itemSelected: selectedItem });
     this.setState({ itemIsSelected: true });
+    window.scrollTo(0, 100);
   };
 
   validURL = str => {
@@ -109,8 +110,17 @@ class MyApp extends App {
     this.setState({ itemSelected: obj });
     this.setState({ itemIsShared: false });
     this.setState({ itemIsSelected: false });
+    this.setState({itemLinkLocked: true});
   };
 
+  closeToLibrary = () => {
+    const obj = {};
+    this.setState({ itemSelected: obj });
+    this.setState({ itemIsShared: false });
+    this.setState({ itemIsSelected: false });
+    this.setState({itemLinkLocked: true});
+  }
+ 
   render() {
     // filter item list by searchField
     const { Component } = this.props;
@@ -120,7 +130,7 @@ class MyApp extends App {
     );
 
     return (
-      <Container>
+      <Container >
         <Head>
           <title>Little Digital Library</title>
           <meta
@@ -128,7 +138,9 @@ class MyApp extends App {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Page>
+        <Page
+          closeToLibrary={this.closeToLibrary}
+        >
           <Component
             items={filteredItems}
             searchItems={this.searchItems}
@@ -140,6 +152,7 @@ class MyApp extends App {
             itemSubmit={this.itemSubmit}
             itemIsShared={this.state.itemIsShared}
             returnToLibrary={this.returnToLibrary}
+            closeToLibrary={this.closeToLibrary}
           />
         </Page>
       </Container>

@@ -94,3 +94,17 @@ select {
 select:invalid {
   color: gray;
 }
+
+.exit-button {
+  position: absolute;
+  right: 25px;
+  font-size: 20px;
+  top: 15px;
+  color: #53443b;
+}
+
+.exit-button svg:hover {
+  cursor: pointer;
+  color: #afa49c;
+  transition: all 0.2s ease;
+}

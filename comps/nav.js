@@ -8,13 +8,13 @@ const TextLink = styled.a`
   }
 `;
 
-const Nav = () => (
+const Nav = (props) => (
   <div className="nav">
     <Link href="/">
-      <TextLink>Home</TextLink>
+      <TextLink onClick={props.closeToLibrary}>Home</TextLink>
     </Link>
     <Link href="/about">
-      <TextLink>About</TextLink>
+      <TextLink onClick={props.closeToLibrary} >About</TextLink>
     </Link>
   </div>
 );

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { faClipboard } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Table = styled.img``;
 
@@ -157,6 +158,7 @@ const LeftSide = props => {
     return (
       <LeftWrapper>
         <ReviewCard>
+          <div className="exit-button" onClick={props.closeToLibrary}><FontAwesomeIcon icon={faTimes}></FontAwesomeIcon></div>
           <FormTitle>What you're taking</FormTitle>
           <h1>{props.selectedItem[0].title}</h1>
           <ItemInfoField className={props.itemLinkLocked && "link-locked"}>

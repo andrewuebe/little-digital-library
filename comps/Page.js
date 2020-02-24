@@ -12,7 +12,7 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header closeToLibrary={this.props.closeToLibrary}/>
         <PageContainer>{this.props.children}</PageContainer>
       </div>
     );

@@ -1,4 +1,4 @@
-import Nav from "./nav";
+import Nav from "./Nav";
 import Link from "next/link"
 import styled from "styled-components";
 
@@ -23,14 +23,14 @@ const Title = styled.div`
   }
 `;
 
-const Header = () => (
+const Header = (props) => (
   <TheHeader>
-    <Title>
+    <Title onClick={props.closeToLibrary}>
       <Link href="/">
         <a>Little Digital Library</a>
       </Link>
     </Title>
-    <Nav />
+    <Nav closeToLibrary={props.closeToLibrary}/>
   </TheHeader>
 );
 

@@ -19,6 +19,7 @@ export default class Home extends React.Component {
           itemIsSelected={this.props.itemIsSelected}
           itemLinkLocked={this.props.itemLinkLocked}
           selectedItem={this.props.itemSelected}
+          closeToLibrary={this.props.closeToLibrary}
         />
         <RightSide
           items={this.props.items}
